@@ -4,14 +4,22 @@ const MONGOJS = require("mongojs");
 // Require request and cheerio. This makes the scraping possible
 const REQUEST = require("request");
 const CHEERIO = require("cheerio");
-//Require handlebars
-
-//require body parser
-
-//require mongoose
 
 // Initialize Express
 const APP = express();
+
+//Require handlebars
+const EXPHBS  = require('express-handlebars');
+
+APP.engine('handlebars', EXPHBS({defaultLayout: 'home'}));
+APP.set('view engine', 'handlebars');
+
+//require body parser
+const BODYPARSER = require('body-parser')
+
+//require mongoose
+const MONGOOSE = require('mongoose');
+
 
 // Database configuration
 const DATABASEURL  = "News";
